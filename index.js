@@ -50,7 +50,8 @@ function processFirstItem(stringList, callback) {
 */
 function processLength(list,callback) {
   /* CODE HERE */
-  return callback(list);
+  let reply = callback(list.length);
+  return reply;
 }
 
 /**
@@ -67,8 +68,12 @@ function processLength(list,callback) {
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'barbar'.
 */
-function processLastItem(/* CODE HERE */) {
+function processLastItem(stringList,callback) {
   /* CODE HERE */
+  let lastItem = stringList.length - 1;
+
+  return callback(stringList[lastItem]);
+
 }
 
 /**
@@ -89,8 +94,11 @@ function processLastItem(/* CODE HERE */) {
  * [2] Invoking `processSum` passing `-5`, '-1', and `(num) => num + 1000`,
  * should return 994.
 */
-function processSum(/* CODE HERE */) {
+function processSum(num1,num2,callback) {
   /* CODE HERE */
+  let sum = num1 + num2;
+
+  return callback(sum);
 }
 
 /**
@@ -111,8 +119,11 @@ function processSum(/* CODE HERE */) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
+function processProduct(num1,num2,callback) {
   /* CODE HERE */
+  let prod = num1 * num2;
+
+  return callback(prod);
 }
 
 /**
@@ -156,8 +167,16 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * 
  * [2] Invoking `lowerCaseStrings` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function lowerCaseStrings(/* code here */) {
+function lowerCaseStrings(strings) {
   /* code here */
+  let reply = [];
+  
+  strings.forEach((item) => {
+    let i = item.toLowerCase();
+    reply.push(i);
+  });
+
+  return reply;
 }
 
 /**
@@ -175,8 +194,20 @@ function lowerCaseStrings(/* code here */) {
  * 
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
 */
-function isItAnApple(/* code here */) {
+function isItAnApple(strings) {
   /* code here */
+  let reply = [];
+
+  strings.forEach((item)=>{
+    if (item === "apple"){
+      reply.push(true);
+    } else {
+      reply.push(false);
+    }
+  });
+
+  return reply;
+
 }
 
 /**
