@@ -277,7 +277,7 @@ function getFullNames(runners) {
   return runners.map((item) =>{ 
 
     return `${item.last_name}, ${item.first_name}`;
-    
+
   });
 }
 
@@ -293,8 +293,14 @@ function getFullNames(runners) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
  */
-function firstNamesAllCaps( runners ) {
+function firstNamesAllCaps(runners) {
   /* CODE HERE */
+  const aa = runners.map((name)=>{
+    
+    return name.first_name.toUpperCase();
+  });
+
+  return aa;
 }
 
 /**
@@ -312,13 +318,22 @@ function firstNamesAllCaps( runners ) {
  * The runners in the array appear in the same order they appear in the `runners` array.
  */
 function getRunnersByTShirtSize(runners, tShirtSize) {
-  let shirtOrder = [];
 
-  runners.forEach(function(items){
-    return shirtOrder.push(`${items.last_name}, ${items.shirt_size}`);
-  });
+  // let shirtOrder = runners.map(function(items){
 
-  return shirtOrder;
+  //   if (items.shirt_size === tShirtSize){
+
+  //     return `${items.first_name}`;
+  //   }
+  // });
+
+let aa = runners.filter((names)=>{
+  if (names.shirt_size === tShirtSize){
+    return `${names.first_name}`;
+  }
+});
+
+  return aa;
 }
 
 /**
